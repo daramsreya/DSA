@@ -20,8 +20,6 @@ public class AppUserController {
     this.appUserRepository = userRepo;
   }
 
-
-
   @PostMapping("/save")
   public ResponseEntity createUser(@RequestBody AppUser user){
     // What is status code ?

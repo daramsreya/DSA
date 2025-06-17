@@ -1,5 +1,6 @@
 package com.naukri.database_api.controllers;
 
+import com.naukri.database_api.models.Questions;
 import com.naukri.database_api.models.Skill;
 import com.naukri.database_api.repository.SkillRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,5 +33,17 @@ public class SkillController {
     public ResponseEntity getSkill(@PathVariable UUID id){
         Skill skill=skillRepository.findById(id).orElse(null);
         return new ResponseEntity(skill,HttpStatus.OK);
+    }
+
+    @PutMapping("/update")
+    public ResponseEntity updateSkill(@RequestBody Skill skill){
+        skillRepository.save(skill);
+        return new ResponseEntity(skill, HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("/delete")
+    public ResponseEntity deleteSkill(@PathVariable UUID id){
+        skillRepository.deleteById(id);
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 }

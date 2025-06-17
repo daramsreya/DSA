@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/v1/db/question")
+@RequestMapping("/api/v1/db/answer")
 public class AnswerController {
     AnswerRepository answerRepository;
 

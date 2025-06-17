@@ -1,4 +1,11 @@
 package com.naukri.database_api.repository;
 
-public class FormSubmissionRepository {
+import com.naukri.database_api.models.FormSubmission;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.UUID;
+
+@Repository
+public class FormSubmissionRepository extends JpaRepository<FormSubmission, UUID> {
 }
